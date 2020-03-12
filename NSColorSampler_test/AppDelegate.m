@@ -17,6 +17,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    _colorSampler = [[NSColorSampler alloc] init];
+
 }
 
 
@@ -24,5 +26,11 @@
     // Insert code here to tear down your application
 }
 
+- (IBAction) showColorSampler: (id)sender
+{
+    [_colorSampler showSamplerWithSelectionHandler:^(NSColor * _Nullable selectedColor) {
+        
+    }];
+}
 
 @end
