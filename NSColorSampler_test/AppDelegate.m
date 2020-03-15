@@ -10,7 +10,9 @@
 
 @interface AppDelegate ()
 
-@property (weak) IBOutlet NSWindow *window;
+@property (retain) IBOutlet NSWindow *window;
+@property (retain) IBOutlet NSColorWell *well;
+
 @end
 
 @implementation AppDelegate
@@ -29,7 +31,7 @@
 - (IBAction) showColorSampler: (id)sender
 {
     [_colorSampler showSamplerWithSelectionHandler:^(NSColor * _Nullable selectedColor) {
-        
+        [self.well setColor:selectedColor];
     }];
 }
 
